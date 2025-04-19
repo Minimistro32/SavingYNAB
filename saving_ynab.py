@@ -39,7 +39,7 @@ YNAB FUNCTIONS
 # monkey patch str function
 def _transactionDetailToStr(self):
     color = "\033[31m" if self.amount < 0 else "\033[32m"
-    return f"{self.account_name[:20]:<20}  {self.payee_name[:26]:<26}  {self.flag_color.name if self.flag_color else '':<6}  {str(self.var_date):<10}  {color}{self.amount / 1000:>7.2f}\033[0m  {(self.memo or '')[:27]:<27}"
+    return f"{self.account_name[:20]:<20}  {(self.payee_name or '')[:26]:<26}  {self.flag_color.name if self.flag_color else '':<6}  {str(self.var_date):<10}  {color}{self.amount / 1000:>7.2f}\033[0m  {(self.memo or '')[:27]:<27}"
 TransactionDetail.__str__ = _transactionDetailToStr
 
 def get_transactions(start_date, end_date=date.today().isoformat()):
@@ -207,7 +207,7 @@ def logo():
 \t| (___ \_| ,--.  _   __  __   _ .--.   .--./)\ \  / /    |   \ | |      / _ \      | |_) |  
 \t _.____`. `'_\ :[ \ [  ][  | [ `.-. | / /'`\; \ \/ /     | |\ \| |     / ___ \     |  __'.  
 \t| \____) |// | |,\ \/ /  | |  | | | | \ \._// _|  |_    _| |_\   |_  _/ /   \ \_  _| |__) | 
-\t \______.'\'-;__/ \__/  [___][___||__].',__` |______|  |_____|\____||____| |____||_______/  
+\t \______.'\'-;__/ \__/  [___][___||__].',__` |_______|  |_____|\____||____| |____||_______/  
 \t                                     ( ( __))                                               """)
     print("-=" * 53 + "-")
 

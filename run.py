@@ -8,7 +8,7 @@ MAIN
 if __name__ == "__main__":
     # read key from file, otherwise use token
     try:
-        with open('key.txt') as f:
+        with open('/Users/tysonfreeze/Desktop/SavingYNAB/key.txt') as f:
             token = f.read()
     except FileNotFoundError:
         token = "INSERT_API_KEY_HERE" # <-------------
@@ -27,8 +27,8 @@ def by_transaction_criteria(t):
 def by_earning_criteria(t):
     return t.amount > 0 and (
             t.flag_color == TransactionFlagColor.GREEN \
-            or "Continental" in t.payee_name \
-            or "Kroger" in t.payee_name \
+            or "Continental" in (t.payee_name or '') \
+            or "Kroger" in (t.payee_name or '') \
         )
 
 # ADJUST THE CRITERIA FOR SPENDING HERE
