@@ -200,7 +200,7 @@ def root_page():
             return root_page
 
 def logo():
-    os.system('cls||clear') # clear terminal
+    os.system('clear||cls') # clear terminal
     print("""
 \t  ______                  _                 ____  ____  ____  _____       _       ______    
 \t.' ____ \                (_)               |_  _||_  _||_   \|_   _|     / \     |_   _ \   
