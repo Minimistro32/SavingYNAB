@@ -1,5 +1,5 @@
 # SavingYNAB
-# Features
+## Features
 Customizably uses YNAB data to calculate savings rate, total earnings, and total spending for any period with optional drill down detail.
 
 ![](screenshots/savings_dtl.png)
