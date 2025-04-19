@@ -23,4 +23,4 @@ This project is entirely open source and private. Currently runs exclusively in 
     by_spending_criteria
     ```
 6) Execute `python3 /SavingYNAB/run.py`
-7) Resize the window to fit the logo
+   * Another option for MacOS: Make `SavingYNAB.command` executable (`chmod +x SavingYNAB.command`) and simply double click.
